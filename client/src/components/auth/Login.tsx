@@ -23,8 +23,14 @@ export default function Login() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<LoginFormData>()
+
+  const fillDemoCredentials = () => {
+    setValue('email', 'xyz@gmail.com')
+    setValue('password', 'xyz@123')
+  }
 
   const onSubmit = async (data: LoginFormData) => {
     try {
@@ -45,6 +51,27 @@ export default function Login() {
           <CardDescription>Sign in to your account to continue</CardDescription>
         </CardHeader>
         <CardContent>
+          <div className="mb-4 rounded-lg border border-blue-200 bg-blue-50 p-3">
+            <p className="mb-2 text-sm font-medium text-blue-900">Demo Account (for Testing)</p>
+            <div className="space-y-1 text-xs text-blue-700">
+              <p>
+                <span className="font-medium">Email:</span> xyz@gmail.com
+              </p>
+              <p>
+                <span className="font-medium">Password:</span> xyz@123
+              </p>
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={fillDemoCredentials}
+              className="mt-2 w-full border-blue-300 text-blue-700 hover:bg-blue-100"
+            >
+              Fill Demo Credentials
+            </Button>
+          </div>
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {(loginError || error) && (
               <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600">

@@ -35,11 +35,18 @@ npm install
 
 3. Create a `.env` file in the `server` directory:
 
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and update the values with your configuration:
+
 ```env
 PORT=5000
 MONGO_URI=your-mongodb-connection-string
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 JWT_EXPIRE=30d
+CLIENT_URL=http://localhost:5173
 ```
 
 **Example MongoDB URI:**
@@ -69,7 +76,21 @@ cd client
 npm install
 ```
 
-3. Start the development server:
+3. Create a `.env` file in the `client` directory (optional for development, required for production):
+
+```bash
+# Create .env file manually or copy from example
+```
+
+Add the following to `client/.env`:
+
+```env
+VITE_API_URL=/api
+```
+
+For production, set this to your backend API URL (e.g., `https://api.yourdomain.com/api`)
+
+4. Start the development server:
 
 ```bash
 npm run dev
@@ -77,7 +98,7 @@ npm run dev
 
 The frontend will start on `http://localhost:5173`
 
-### 4. Access the Application
+### 5. Access the Application
 
 Open your browser and navigate to:
 
@@ -135,6 +156,13 @@ Expense Tracker/
 | `MONGO_URI`  | MongoDB connection string | `mongodb://localhost:27017/expense-tracker` |
 | `JWT_SECRET` | Secret key for JWT tokens | `your-secret-key`                           |
 | `JWT_EXPIRE` | JWT token expiration time | `30d`                                       |
+| `CLIENT_URL` | Frontend URL for CORS     | `http://localhost:5173`                     |
+
+### Frontend (.env)
+
+| Variable       | Description                            | Example                                    |
+| -------------- | -------------------------------------- | ------------------------------------------ |
+| `VITE_API_URL` | Backend API base URL (includes `/api`) | `/api` or `https://api.yourdomain.com/api` |
 
 ## 🔐 Authentication
 
