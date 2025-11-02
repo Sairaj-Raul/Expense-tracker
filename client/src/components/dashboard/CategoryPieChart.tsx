@@ -74,7 +74,6 @@ export default function CategoryPieChart({
     innerRadius,
     outerRadius,
     percent,
-    index,
   }: any) => {
     // Only show label if percentage is >= 5%
     if (percent < 0.05) return ''
@@ -136,7 +135,7 @@ export default function CategoryPieChart({
                 fill="#8884d8"
                 dataKey="value"
               >
-                {chartData.map((entry, index) => (
+                {chartData.map((_, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}

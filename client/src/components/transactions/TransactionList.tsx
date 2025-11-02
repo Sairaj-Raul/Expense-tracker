@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useGetTransactionsQuery } from '@/store/api/transactionsApi'
+import { useGetTransactionsQuery, type Transaction } from '@/store/api/transactionsApi'
 import TransactionItem from './TransactionItem'
 import { useState } from 'react'
 import { useGlobalSearch } from '@/hooks/useGlobalSearch'
@@ -51,13 +51,19 @@ export default function TransactionList() {
     )
   }
 
+  const handleEdit = (transaction: Transaction) => {
+    if (editingTransaction === null) {
+      setEditingTransaction(transaction._id)
+    }
+  }
+
   return (
     <div className="space-y-2">
       {filteredTransactions.map((transaction) => (
         <TransactionItem
           key={transaction._id}
           transaction={transaction}
-          onEdit={editingTransaction === null ? setEditingTransaction : undefined}
+          onEdit={editingTransaction === null ? handleEdit : undefined}
         />
       ))}
     </div>

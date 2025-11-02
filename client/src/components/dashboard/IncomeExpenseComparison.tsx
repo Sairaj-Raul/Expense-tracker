@@ -61,9 +61,7 @@ export default function IncomeExpenseComparison({
     cx,
     cy,
     midAngle,
-    innerRadius,
     outerRadius,
-    percent,
     payload,
   }: any) => {
     const RADIAN = Math.PI / 180

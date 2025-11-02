@@ -32,7 +32,6 @@ export const getMonthlyData = (transactions: Transaction[]): MonthlyData[] => {
   const monthlyMap = new Map<string, { income: number; expense: number }>()
 
   transactions.forEach((transaction) => {
-    const month = format(new Date(transaction.date), 'MMM')
     const key = `${format(new Date(transaction.date), 'yyyy-MM')}`
 
     if (!monthlyMap.has(key)) {
