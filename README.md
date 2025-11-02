@@ -2,6 +2,21 @@
 
 A full-stack expense tracking application built with React, Node.js, Express, and MongoDB. Track your income, expenses, and savings with beautiful charts and comprehensive filtering options.
 
+> **🚀 This application is live and deployed!** You can access the demo below to explore all features without setting up locally.
+
+## 🌐 Live Demo
+
+🔗 **Frontend:** [https://expense-tracker-nine-ochre-27.vercel.app](https://expense-tracker-nine-ochre-27.vercel.app)
+
+🔗 **Backend API:** [https://expense-tracker-backend-6fxm.onrender.com](https://expense-tracker-backend-6fxm.onrender.com)
+
+### Demo Credentials
+
+- **Email:** xyz@gmail.com
+- **Password:** xyz@123
+
+You can use these credentials to login directly and explore the application!
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
